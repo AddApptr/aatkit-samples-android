@@ -1,0 +1,53 @@
+pluginManagement {
+    repositories {
+        google()
+        mavenCentral()
+        gradlePluginPortal()
+    }
+}
+
+dependencyResolutionManagement {
+    repositoriesMode = RepositoriesMode.FAIL_ON_PROJECT_REPOS
+    repositories {
+        google()
+        mavenCentral()
+        maven { //AATKit repository
+            url = 'https://gravite-sdk-releases.s3.eu-central-1.amazonaws.com/aatkit/android/maven'
+            content { includeGroupByRegex "com\\.intentsoftware\\..*" }
+        }
+        maven { //GraviteRTB repository
+            url = 'https://gravite-sdk-releases.s3.eu-central-1.amazonaws.com/rtbsdk/android/maven'
+            content { includeGroupByRegex "com\\.rtb\\..*" }
+        }
+        maven { url = 'https://s3.amazonaws.com/smaato-sdk-releases/' } //Smaato repository
+        maven { url = 'https://verve.jfrog.io/artifactory/verve-gradle-release' } //PubNative repository
+        maven { url = 'https://dl-maven-android.mintegral.com/repository/mbridge_android_sdk_oversea' } //Mintegral repository
+        maven { url = 'https://teads.jfrog.io/artifactory/SDKAndroid-maven-prod' } //Teads repository
+        maven { url = 'https://maven.display.io/' } //Display.io repository
+    }
+}
+
+rootProject.name = 'aatkit-samples-android'
+
+// App open ads
+include ':appopen'
+
+// Banners
+include ':banner:stickybanner'
+include ':banner:infeedbannerusinginfeedapi'
+include ':banner:infeedbannerusingbannercache'
+include ':banner:infeedbannersusingstaticapi'
+
+// Consent handling
+include ':consent:noconsenthandlingsample'
+include ':consent:simpleconsentsample'
+include ':consent:managedconsentsample'
+include ':consent:vendorconsentsample'
+
+// Fullscreen and rewarded video ads
+include ':fullscreen:fullscreenusingautoreloading'
+include ':fullscreen:rewardedvideousingautoreloading'
+include ':fullscreen:startinterstitial'
+
+// Native ads
+include ':nativeads'

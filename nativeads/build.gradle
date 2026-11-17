@@ -1,0 +1,48 @@
+plugins {
+    alias(libs.plugins.android.application)
+}
+
+android {
+    namespace = 'com.addapptr.nativeadssample'
+    compileSdk = libs.versions.compileSdk.get().toInteger()
+
+    defaultConfig {
+        applicationId = 'com.addapptr.nativeadssample'
+        minSdk = libs.versions.minSdk.get().toInteger()
+        // Kept lower than in the other samples: the layout of this sample is not yet adapted
+        // to the edge-to-edge display enforced for apps targeting SDK 35+.
+        targetSdk = 33
+        versionCode = 1
+        versionName = '1.0'
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled = false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+
+    compileOptions {
+        coreLibraryDesugaringEnabled = true
+
+        sourceCompatibility = JavaVersion.VERSION_1_8
+        targetCompatibility = JavaVersion.VERSION_1_8
+    }
+
+    bundle {
+        language {
+            enableSplit = false
+        }
+    }
+}
+
+dependencies {
+    //AATKit
+    implementation libs.aatkit
+
+    coreLibraryDesugaring libs.desugar.jdk.libs
+
+    implementation libs.androidx.appcompat
+    implementation libs.material
+}

@@ -1,0 +1,35 @@
+[versions]
+# AATKit version used by all sample apps - update it here only.
+aatkit = "3.18.3"
+
+# Optional ad networks that are not bundled with AATKit (used by the banner samples)
+teads = "6.2.1"
+displayio = "5.7.4"
+
+# Android build setup shared by all sample apps
+agp = "9.4.1"
+compileSdk = "36"
+minSdk = "24"
+targetSdk = "36"
+
+desugarJdkLibs = "2.1.5"
+appcompat = "1.6.1"
+material = "1.8.0"
+constraintlayout = "2.1.4"
+lifecycleProcess = "2.5.1"
+workRuntime = "2.7.1"
+
+[libraries]
+aatkit = { module = "com.intentsoftware.addapptr:AATKit", version.ref = "aatkit" }
+teads-sdk = { module = "tv.teads.sdk.android:sdk", version.ref = "teads" }
+displayio-sdk = { module = "com.brandio.ads:sdk", version.ref = "displayio" }
+
+desugar-jdk-libs = { module = "com.android.tools:desugar_jdk_libs", version.ref = "desugarJdkLibs" }
+androidx-appcompat = { module = "androidx.appcompat:appcompat", version.ref = "appcompat" }
+androidx-constraintlayout = { module = "androidx.constraintlayout:constraintlayout", version.ref = "constraintlayout" }
+androidx-lifecycle-process = { module = "androidx.lifecycle:lifecycle-process", version.ref = "lifecycleProcess" }
+androidx-work-runtime = { module = "androidx.work:work-runtime", version.ref = "workRuntime" }
+material = { module = "com.google.android.material:material", version.ref = "material" }
+
+[plugins]
+android-application = { id = "com.android.application", version.ref = "agp" }

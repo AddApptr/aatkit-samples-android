@@ -1,0 +1,52 @@
+plugins {
+    alias(libs.plugins.android.application)
+}
+
+android {
+    namespace = 'com.aatkit.infeedbannerusingbannercache'
+    compileSdk = libs.versions.compileSdk.get().toInteger()
+
+    defaultConfig {
+        applicationId = 'com.aatkit.infeedbannerusingbannercache'
+        minSdk = libs.versions.minSdk.get().toInteger()
+        targetSdk = libs.versions.targetSdk.get().toInteger()
+        versionCode = 1
+        versionName = '1.0'
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled = false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+
+    compileOptions {
+        coreLibraryDesugaringEnabled = true
+
+        sourceCompatibility = JavaVersion.VERSION_1_8
+        targetCompatibility = JavaVersion.VERSION_1_8
+    }
+
+    bundle {
+        language {
+            enableSplit = false
+        }
+    }
+}
+
+dependencies {
+    //AATKit
+    implementation libs.aatkit
+    //AATKit - Teads
+    implementation libs.teads.sdk
+    //AATKit - Display.io
+    implementation libs.displayio.sdk
+
+    coreLibraryDesugaring libs.desugar.jdk.libs
+
+    implementation libs.androidx.appcompat
+    implementation libs.material
+    implementation libs.androidx.constraintlayout
+    implementation libs.androidx.work.runtime //fix crashes on Android 12
+}

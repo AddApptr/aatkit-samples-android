@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">Managed Consent Sample</string>
+    <string name="description">This sample handles consent with the use od AATKit\'s ManagedConsent, utilizing an CMP from Google. Remember that the user must always have an option to modify his consent settings.</string>
+    <string name="change_consent_settings">Change consent settings</string>
+</resources>

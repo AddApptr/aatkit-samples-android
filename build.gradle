@@ -1,0 +1,15 @@
+// Top-level build file where you can add configuration options common to all sample apps.
+plugins {
+    alias(libs.plugins.android.application) apply false
+}
+
+subprojects {
+    // The legacy Google Mobile Ads SDK cannot coexist with the NextGen SDK
+    // (com.google.android.libraries.ads.mobile.sdk) - it causes duplicate-symbol errors.
+    // Exclude it globally so no mediated network can re-introduce it transitively.
+    // Note: play-services-ads-identifier is a separate artifact and must NOT be excluded.
+    configurations.configureEach {
+        exclude group: 'com.google.android.gms', module: 'play-services-ads'
+        exclude group: 'com.google.android.gms', module: 'play-services-ads-lite'
+    }
+}

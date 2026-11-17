@@ -1,0 +1,4 @@
+<resources>
+    <string name="app_name">Sticky Banner</string>
+    <string name="main_text">Stcky banners are not allowed to hide any content of the app and always stay at their  place so there is always place reserved for them. That’s why you need to predetermine the space of the placeholder based on the banner size you want to display. \nApp is trying to exchange banner every 30 seconds</string>
+</resources>

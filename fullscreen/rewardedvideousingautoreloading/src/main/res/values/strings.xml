@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">Rewarded video using autoreloading</string>
+    <string name="rewardedvideo">
+        When an rewarded video is displayed, it interrupts / pauses your app. Close the rewarded video to return to the app.\n\n
+        Tap the button to see an Rewarded Video ad</string>
+    <string name="show">Show</string>
+</resources>

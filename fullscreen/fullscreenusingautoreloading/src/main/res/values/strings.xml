@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">Fullscreen using autoreloading</string>
+    <string name="interstitial">
+        When an interstitial is displayed, it interrupts / pauses your app. Close the interstitial to return to the app.\n\n
+        Tap the button to see an Interstitial ad</string>
+    <string name="show">Show</string>
+</resources>

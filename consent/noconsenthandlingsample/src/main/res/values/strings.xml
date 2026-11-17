@@ -1,0 +1,4 @@
+<resources>
+    <string name="app_name">No Consent Handling Sample</string>
+    <string name="description">This sample does not handle GDPR consent at all. It might lead to decreased fill rates and revenues, as well as less precise reporting.</string>
+</resources>
